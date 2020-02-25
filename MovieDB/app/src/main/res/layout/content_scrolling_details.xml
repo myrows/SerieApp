@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingDetailsActivity"
+    tools:showIn="@layout/activity_scrolling_details">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/overView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/large_text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fbutton"></TextView>
+
+        <ImageView
+            android:id="@+id/imageViewPosterDetail"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewTitleDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewPosterDetail"
+            app:layout_constraintTop_toTopOf="@+id/imageViewPosterDetail" />
+
+        <RatingBar
+            android:id="@+id/ratingBarDetails"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:numStars="10"
+            android:progressTint="@color/stars"
+            android:rating="7.2"
+            app:layout_constraintStart_toStartOf="@+id/textViewTitleDetails"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitleDetails" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/fbutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/ic_star_white_24dp"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/open_sans"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Recomendaciones"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            fbutton:cornerRadius="5dp"
+            fbutton:fButtonColor="@color/fbutton_color_pumpkin"
+            fbutton:layout_constraintEnd_toEndOf="parent"
+            fbutton:layout_constraintStart_toStartOf="parent"
+            fbutton:layout_constraintTop_toBottomOf="@+id/imageViewPosterDetail"
+            fbutton:shadowColor="@color/fbutton_color_asbestos"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="2dp">
+
+        </info.hoang8f.widget.FButton>
+
+        <ImageView
+            android:id="@+id/imageViewAutorDetail"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewPosterDetail"
+            app:layout_constraintStart_toStartOf="@+id/ratingBarDetails"
+            fbutton:layout_constraintTop_toBottomOf="@+id/ratingBarDetails"
+            fbutton:layout_constraintVertical_bias="0.09" />
+
+        <TextView
+            android:id="@+id/textViewAutorDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/open_sans"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewAutorDetail"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAutorDetail"
+            app:layout_constraintTop_toTopOf="@+id/imageViewAutorDetail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

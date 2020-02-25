@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mxn.soul.flowingdrawer_core.FlowingDrawer xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:edPosition="1"
+    app:edMenuSize="260dp"
+    app:edMenuBackground="#dddddd"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.dmtroncoso.moviedb.recyclerView.popular.SerieFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/view_feed_toolbar" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.mxn.soul.flowingdrawer_core.FlowingMenuLayout
+        android:id="@+id/menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/id_container_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.mxn.soul.flowingdrawer_core.FlowingMenuLayout>
+
+</com.mxn.soul.flowingdrawer_core.FlowingDrawer>
